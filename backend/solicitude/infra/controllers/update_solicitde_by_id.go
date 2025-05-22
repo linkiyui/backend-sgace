@@ -49,7 +49,7 @@ func UpdateSolicitudeById(ctx *gin.Context) {
 	}
 
 	solicitude.ActivityID = req.ActivityID
-	solicitude.Group = req.Group
+	solicitude.Group_id = req.Group
 	solicitude.Faculty = solicitude_domain.Faculty(req.Faculty)
 	solicitude.Grade = req.Grade
 

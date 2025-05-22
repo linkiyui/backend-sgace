@@ -23,7 +23,7 @@ func (s *SolicitudeService) AcceptSolicitude(solicitude_id string) error {
 		ActivityID: solicitud.ActivityID,
 		UserID:     solicitud.UserID,
 		Status:     domain.Accepted,
-		Group:      solicitud.Group,
+		Group_id:   solicitud.Group_id,
 		Faculty:    solicitud.Faculty,
 		Grade:      solicitud.Grade,
 		CreatedAt:  solicitud.CreatedAt,

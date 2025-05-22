@@ -60,7 +60,7 @@ func CreateSolicitude(ctx *gin.Context) {
 		ActivityID: req.ActivityID,
 		UserID:     user_id,
 		Status:     domain.Accepted,
-		Group:      req.Group,
+		Group_id:   req.Group,
 		Faculty:    domain.Faculty(req.Faculty),
 		Grade:      req.Grade,
 		CreatedAt:  time.Now(),

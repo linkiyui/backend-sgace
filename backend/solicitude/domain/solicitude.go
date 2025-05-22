@@ -6,7 +6,7 @@ type Solicitude struct {
 	ID         string    `json:"id"`
 	UserID     string    `json:"user_id"`
 	ActivityID string    `json:"activity_id"`
-	Group      string    `json:"group"`
+	Group_id   string    `json:"group_id"`
 	Faculty    faculty   `json:"faculty"`
 	Grade      string    `json:"grade"`
 	CreatedAt  time.Time `json:"created_at"`

@@ -17,7 +17,7 @@ func (s *SolicitudeService) CreateSolicitude(solicitude *solicitude_domain.Solic
 		ActivityID: solicitude.ActivityID,
 		UserID:     solicitude.UserID,
 		Status:     solicitude_domain.Accepted,
-		Group:      solicitude.Group,
+		Group_id:   solicitude.Group_id,
 		Faculty:    solicitude.Faculty,
 		Grade:      solicitude.Grade,
 		CreatedAt:  solicitude.CreatedAt,
