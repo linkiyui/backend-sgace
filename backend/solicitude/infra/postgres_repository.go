@@ -91,7 +91,7 @@ func (r *solicitudePostgresRepository) GetRefusedSolicitudes(id string) ([]solic
 
 func (r *solicitudePostgresRepository) GetComppletedSolicitudes(id string) ([]solicitude_domain.Solicitude, error) {
 	var solicitudes []solicitude_domain.Solicitude
-	err := r.db.Table("solicitudes").Where("date <= ?", time.Now(), "user_id = ?", id).Find(&solicitudes).Error
+	err := r.db.Table("solicitudes").Where("date <= ?", time.Now().Format("2006-01-02"), "user_id = ?", id).Find(&solicitudes).Error
 	if err != nil {
 		return nil, err
 	}
