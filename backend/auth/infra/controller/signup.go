@@ -29,6 +29,8 @@ func Signup(ctx *gin.Context) {
 		return
 	}
 
+	// fmt.Println(id)
+
 	user := &user_domain.User{
 		ID:       id,
 		Username: req.Username,
@@ -48,6 +50,8 @@ func Signup(ctx *gin.Context) {
 		ctx.JSON(500, gin.H{"error": "failed to create user"})
 		return
 	}
+
+	// fmt.Println(user)
 
 	token, err := auth_token.GenerateLoginToken(user.ID, string(user.Role))
 	if err != nil {

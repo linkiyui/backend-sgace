@@ -13,16 +13,12 @@ func (s *UserService) CreateUser(user *user_domain.User) error {
 
 	user.Password = hashedPassword
 
-	id, err := utils.GenerateUUIDv7()
-	if err != nil {
-		return err
-	}
-
 	user_to_postgres := &user_domain.User{
-		ID:        id,
+		ID:        user.ID,
 		Username:  user.Username,
 		Email:     user.Email,
 		Password:  user.Password,
+		Role:      user.Role,
 		CreatedAt: time.Now(),
 	}
 

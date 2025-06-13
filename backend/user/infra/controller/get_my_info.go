@@ -18,7 +18,7 @@ func GetMyInfo(ctx *gin.Context) {
 		exists  bool
 	)
 
-	uid, exists = ctx.Params.Get("user_id")
+	uid, exists = ctx.Get("user_id")
 	if !exists {
 		ctx.AbortWithStatus(401)
 		return
@@ -32,6 +32,7 @@ func GetMyInfo(ctx *gin.Context) {
 	if err != nil {
 		if de := domain_error.IsDomainError(err); de != nil {
 			ctx.AbortWithStatusJSON(de.Code, gin.H{"error": de.Message})
+			return
 		}
 	}
 	info := Info{

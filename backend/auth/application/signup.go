@@ -1,6 +1,8 @@
 package application
 
 import (
+	"fmt"
+
 	user_domain "github.com/sgace/backend/user/domain"
 	domain_errors "github.com/sgace/errors"
 )
@@ -25,6 +27,9 @@ func (s *AuthService) SignUp(user *user_domain.User) error {
 	}
 
 	// Create the user
+
+	fmt.Println(user)
+
 	err = s.user_serv.CreateUser(user)
 	if err != nil {
 		return err
